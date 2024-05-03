@@ -1,0 +1,45 @@
+CREATE DATABASE facturacion_crud;
+USE facturacion_crud;
+
+CREATE TABLE facturas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    producto VARCHAR(255) NOT NULL,
+    cantidad INT NOT NULL,
+    precio DECIMAL(10, 2) NOT NULL,
+    impuesto DECIMAL(10, 2) NOT NULL,
+    subtotal DECIMAL(10, 2) NOT NULL,
+    total DECIMAL(10, 2) NOT NULL
+);
+
+CREATE TABLE productos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(255) NOT NULL,
+    precio DECIMAL(10, 2) NOT NULL,
+    stock INT NOT NULL,
+    descripcion TEXT
+);
+CREATE TABLE detalle_factura (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_factura INT NOT NULL,
+    id_producto INT NOT NULL,
+    cantidad INT NOT NULL,
+    precio_unitario DECIMAL(10, 2) NOT NULL,
+    subtotal DECIMAL(10, 2) NOT NULL,
+    FOREIGN KEY (id_factura) REFERENCES facturas(id),
+    FOREIGN KEY (id_producto) REFERENCES productos(id)
+);
+
+INSERT INTO productos (nombre, precio, stock, descripcion)
+VALUES 
+    ('Leche Gloria', 2.99, 200, 'Leche entera pasteurizada'),
+    ('Arroz', 1.49, 150, 'Arroz blanco de grano largo'),
+    ('Huevos', 3.99, 100, 'Docena de huevos frescos'),
+    ('Leche Laive', 0.99, 300, 'Pan blanco de molde'),
+    ('Manzanas', 0.69, 120, 'Manzanas rojas frescas'),
+    ('Pollo', 5.99, 80, 'Pechuga de pollo sin hueso'),
+    ('Papas', 1.29, 180, 'Papas blancas frescas'),
+    ('Aceite Vegetal', 8.99, 50, 'Aceite vegetal'),
+    ('Aceite de Oliva', 7.99, 50, 'Aceite de oliva virgen extra');
+
+select * from facturas;
+select * from detalle_factura;
