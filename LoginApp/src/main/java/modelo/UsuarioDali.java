@@ -62,4 +62,24 @@ public class UsuarioDali implements ValidarUsuario {
         }
         return res;
     }
+
+    @Override
+    public int registrar(String correo, String contra) {
+        int resultado = 0;
+        String sql = "INSERT INTO usuario (correo, contra) VALUES (?, ?)";
+        try {
+            abrirConexion();
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1, correo);
+            ps.setString(2, contra);
+            resultado = ps.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            cerrarConexion();
+        }
+        return resultado;
+    }
+
+    
 }

@@ -23,7 +23,15 @@
 			</div>
 			<input type="submit" name="accion" value="Ingresar">
 		</form>
+		</form>
+        <form action="Registrate.jsp">
+            <div class="form-group">
+                <p>¿No tienes una cuenta?</p>
+                <input type="submit" value="Registrar">
+            </div>
+        </form>
 	</div>
+	
 </body>
 
 </html>

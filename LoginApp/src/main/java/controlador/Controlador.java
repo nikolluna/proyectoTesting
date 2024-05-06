@@ -17,8 +17,6 @@ import modelo.UsuarioDali;
 @WebServlet(asyncSupported = true, urlPatterns = { "/Controlador" })
 
 public class Controlador extends HttpServlet {
-	String listar = "clases/";
-	String agregar = "";
 	int res;
 	Usuario us = new Usuario();
 	private static final long serialVersionUID = 1L;

@@ -30,5 +30,15 @@
 	<servlet-name>ControladorCabecera</servlet-name>
 	<url-pattern>/ControladorCabecera</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+	<servlet-name>ControladorRegistrar</servlet-name>
+	<servlet-class>controlador.ControladorRegistrar</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+	<servlet-name>ControladorRegistrar</servlet-name>
+	<url-pattern>/ControladorRegistrar</url-pattern>
+  </servlet-mapping>
 
 </web-app>
