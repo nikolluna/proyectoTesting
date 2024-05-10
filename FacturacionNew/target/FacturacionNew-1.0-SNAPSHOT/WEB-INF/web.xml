@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="6.0" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd">
+    <servlet>
+        <servlet-name>Controlador</servlet-name>
+        <servlet-class>Controlador.Controlador</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControladorArticulos</servlet-name>
+        <servlet-class>Controlador.ControladorArticulos</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControladorClientes</servlet-name>
+        <servlet-class>Controlador.ControladorClientes</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControladorVendedor</servlet-name>
+        <servlet-class>Controlador.ControladorVendedor</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Controlador</servlet-name>
+        <url-pattern>/Controlador</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ControladorRegistrar</servlet-name>
+        <servlet-class>Controlador.ControladorRegistrar</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ControladorRegistrar</servlet-name>
+        <url-pattern>/ControladorRegistrar</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ControladorCabecera</servlet-name>
+        <servlet-class>Controlador.ControladorCabecera</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ControladorCabecera</servlet-name>
+        <url-pattern>/ControladorCabecera</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControladorArticulos</servlet-name>
+        <url-pattern>/ControladorArticulos</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControladorClientes</servlet-name>
+        <url-pattern>/ControladorClientes</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControladorVendedor</servlet-name>
+        <url-pattern>/ControladorVendedor</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+    
+</web-app>
