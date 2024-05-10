@@ -1,0 +1,53 @@
+DROP DATABASE UserApp;
+CREATE DATABASE UserApp;
+
+USE UserApp;
+CREATE TABLE usuario (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    correo VARCHAR(255) UNIQUE,
+    contra VARCHAR(255)
+);
+
+CREATE TABLE cliente (
+    ruc_cliente CHAR(11) PRIMARY KEY,
+    nombre_cliente VARCHAR(255),
+    direccion_cliente VARCHAR(255),
+    correo_user VARCHAR(255),
+    FOREIGN KEY (correo_user) REFERENCES usuario(correo)
+);
+
+CREATE TABLE vendedor (
+    dni_vendedor VARCHAR(8) PRIMARY KEY,
+	correo VARCHAR(255),
+    nombre_vendedor VARCHAR(255),
+    FOREIGN KEY (correo) REFERENCES usuario(correo)
+);
+
+CREATE TABLE cabecera_factura (
+    num_factura INT PRIMARY KEY AUTO_INCREMENT,
+    fecha DATE,
+    ruc_cliente CHAR(11),
+    codigo_vendedor INT,
+	correo VARCHAR(255),
+    sub_total DECIMAL(10, 2),
+    igv DECIMAL(10, 2),
+    total_factura DECIMAL(10, 2),
+    FOREIGN KEY (correo) REFERENCES usuario(correo)
+);
+
+CREATE TABLE articulos (
+    codigo_item INT AUTO_INCREMENT PRIMARY KEY ,
+	correo VARCHAR(255),
+    descripcion_item VARCHAR(255),
+    precio DECIMAL(10, 2),
+    FOREIGN KEY (correo) REFERENCES usuario(correo)
+);
+
+
+select * from articulos;
+select * from usuario;
+select * from cliente;
+select * from cabecera_factura;
+DELETE FROM cabecera_factura;
+
+select * from Cliente;
